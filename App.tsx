@@ -173,11 +173,20 @@ const Hero = () => {
           <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
             {CONTENT.hero.description}
           </p>
-          <div className="pt-4">
-            <Button href={LINKS.mainCta}>
-              {CONTENT.hero.cta} <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+          
+          <div className="pt-6 border-t border-slate-100">
+             <h3 className="text-xl font-bold text-slate-900 mb-3">{CONTENT.form.title}</h3>
+             <p className="text-slate-600 mb-6 max-w-lg">{CONTENT.form.text}</p>
+             <div className="flex flex-col sm:flex-row gap-4">
+                <Button href={LINKS.googleForm1} className="w-full sm:w-auto">
+                  Formulaire Entreprise <ExternalLink className="ml-2 w-4 h-4" />
+                </Button>
+                <Button href={LINKS.googleForm2} variant="outline" className="w-full sm:w-auto">
+                  Formulaire Particulier <ExternalLink className="ml-2 w-4 h-4" />
+                </Button>
+             </div>
           </div>
+
         </div>
         
         <div className="relative animate-fade-in-delayed group order-1 md:order-2 flex justify-center items-center">
@@ -331,24 +340,7 @@ const Impact = () => (
   </Section>
 );
 
-const FormSection = () => (
-  <Section id="participer" className="bg-slate-50">
-    <div className="max-w-3xl mx-auto text-center bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
-      <h2 className="text-3xl font-bold text-slate-900 mb-6">{CONTENT.form.title}</h2>
-      <p className="text-lg text-slate-600 mb-10">
-        {CONTENT.form.text}
-      </p>
-      <div className="flex flex-col md:flex-row gap-6 justify-center">
-        <Button href={LINKS.googleForm1} className="w-full md:w-auto">
-          Formulaire Entreprise <ExternalLink className="ml-2 w-4 h-4" />
-        </Button>
-        <Button href={LINKS.googleForm2} variant="outline" className="w-full md:w-auto">
-          Formulaire Particulier <ExternalLink className="ml-2 w-4 h-4" />
-        </Button>
-      </div>
-    </div>
-  </Section>
-);
+// FormSection removed as per request (moved to Hero)
 
 const Footer = () => (
   <footer className="bg-slate-900 text-slate-400 py-16">
@@ -420,7 +412,7 @@ export default function App() {
             <HowItWorks />
             <Audience />
             <Impact />
-            <FormSection />
+            {/* FormSection removed */}
         </main>
         <Footer />
         <BackToTop />
